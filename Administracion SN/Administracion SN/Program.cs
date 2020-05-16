@@ -57,21 +57,23 @@ namespace Administracion_SN
                     try
                     {
                         Cargar(emp);
-                        Console.WriteLine("Datos Empresa");
-                        Console.WriteLine("\tNombre: " + emp[0].Nombre);
-                        Console.WriteLine("\tRUT: " + emp[0].Nombre);
-                        foreach(Division data in emp[0].Get_Div())
-                        {
-                            Console.WriteLine("Division: " + data.Nombre);
-                            int i = 1;
-                            foreach(Persona p_data in data.Get_Personas())
+                        foreach (Empresa data0 in emp) {
+                            Console.WriteLine("Datos Empresa");
+                            Console.WriteLine("\tNombre: " + data0.Nombre);
+                            Console.WriteLine("\tRUT: " + data0.Rut);
+                            foreach (Division data in data0.Get_Div())
                             {
-                                Console.WriteLine("\tDatos del encargado " + i);
-                                Console.WriteLine("\t\tNombre Encargado: " + p_data.Name);
-                                Console.WriteLine("\t\tApellido Encargado: " + p_data.Last_name);
-                                Console.WriteLine("\t\tRUT Encargado: " + p_data.Rut);
-                                Console.WriteLine("\t\tEdad Encargado: " + p_data.Edad);
-                                i++;
+                                Console.WriteLine("Division: " + data.Nombre);
+                                int i = 1;
+                                foreach (Persona p_data in data.Get_Personas())
+                                {
+                                    Console.WriteLine("\tDatos del encargado " + i);
+                                    Console.WriteLine("\t\tNombre Encargado: " + p_data.Name);
+                                    Console.WriteLine("\t\tApellido Encargado: " + p_data.Last_name);
+                                    Console.WriteLine("\t\tRUT Encargado: " + p_data.Rut);
+                                    Console.WriteLine("\t\tEdad Encargado: " + p_data.Edad);
+                                    i++;
+                                }
                             }
                         }
                         Console.ReadLine();
